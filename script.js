@@ -1,4 +1,4 @@
-import { BASE_URL } from "./utils.js";
+const BASE_URL = 'http://localhost:3000';
 
 const noteForm = document.getElementById('noteForm');
 const inputAuthor = document.getElementById('inputAuthor');
@@ -17,7 +17,7 @@ if (notesTable) {
     const notesTableBody = document.getElementById('notesTable').getElementsByTagName('tbody')[0];
     async function fetchNotes() {
         try {
-            const response = await fetch('${BASE_URL}/notes');
+            const response = await fetch(`${BASE_URL}/notes`);
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -98,7 +98,7 @@ if (noteForm) {
         };
 
         try {
-            const response = await fetch('${BASE_URL}/add-note', {
+            const response = await fetch(`${BASE_URL}/add-note`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
