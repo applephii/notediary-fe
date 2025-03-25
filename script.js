@@ -1,3 +1,5 @@
+import { BASE_URL } from "./utils.js";
+
 const noteForm = document.getElementById('noteForm');
 const inputAuthor = document.getElementById('inputAuthor');
 const inputTitle = document.getElementById('inputTitle');
@@ -15,7 +17,7 @@ if (notesTable) {
     const notesTableBody = document.getElementById('notesTable').getElementsByTagName('tbody')[0];
     async function fetchNotes() {
         try {
-            const response = await fetch('http://localhost:3000/notes');
+            const response = await fetch('${BASE_URL}/notes');
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -65,7 +67,7 @@ if (notesTable) {
 
     // delete
     function deleteNoteFromDB(noteId, row) {
-        fetch(`http://localhost:3000/delete-note/${noteId}`, {
+        fetch(`${BASE_URL}/delete-note/${noteId}`, {
             method: 'DELETE',
         })
         .then(response => {
@@ -96,7 +98,7 @@ if (noteForm) {
         };
 
         try {
-            const response = await fetch('http://localhost:3000/add-note', {
+            const response = await fetch('${BASE_URL}/add-note', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -127,7 +129,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     if (noteId) {
         try {
-            const response = await fetch(`http://localhost:3000/note/${noteId}`);
+            const response = await fetch(`${BASE_URL}/note/${noteId}`);
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -150,7 +152,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 };
 
                 try {
-                    const updateResponse = await fetch(`http://localhost:3000/edit-note/${noteId}`, {
+                    const updateResponse = await fetch(`${BASE_URL}/edit-note/${noteId}`, {
                         method: 'PUT',
                         headers: {
                             'Content-Type': 'application/json'
