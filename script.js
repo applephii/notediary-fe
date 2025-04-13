@@ -1,5 +1,6 @@
 const BASE_URL = 'https://notediary-be-1013759214686.us-central1.run.app';
 
+
 const noteForm = document.getElementById('noteForm');
 const inputAuthor = document.getElementById('inputAuthor');
 const inputTitle = document.getElementById('inputTitle');
