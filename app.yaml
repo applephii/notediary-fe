@@ -16,7 +16,3 @@ handlers:
   - url: /style.css
     static_files: style.css
     upload: style.css
-
-  - url: /.*
-    static_files: *.*
-    upload: *.*
