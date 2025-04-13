@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = 'https://notediary-be-1013759214686.us-central1.run.app';
 
 const noteForm = document.getElementById('noteForm');
 const inputAuthor = document.getElementById('inputAuthor');
