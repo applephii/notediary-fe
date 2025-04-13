@@ -16,3 +16,15 @@ handlers:
   - url: /style.css
     static_files: style.css
     upload: style.css
+
+  - url: /pastNote.html
+  static_files: pastNote.html
+  upload: pastNote.html
+
+  - url: /add-note.html
+  static_files: add-note.html
+  upload: add-note.html
+
+  - url: /edit-note.html
+  static_files: edit-note.html
+  upload: edit-note.html
